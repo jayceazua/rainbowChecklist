@@ -53,30 +53,30 @@ def user_input(prompt):
 def select(function_code):
     #Create item
     if function_code == "A":
-        input_item = user_input("Add to list: ")
+        input_item = user_input("Add to list:\n ")
         create(input_item)
     #Delete item
     elif function_code == "D":
-        input_item = user_input("Which item do you want to delete? ")
+        input_item = user_input("Which item do you want to delete?\n ")
         destroy(input_item)
     #Read item
     elif function_code =="R":
-        input_item = user_input("What is the number of that item? ")
+        input_item = user_input("What is the number of that item?\n ")
 
         #Remember that item_index (was used as the variable that holds user input and inside read below) must actually exist or our program will crash.
         read(int(input_item))
 
     # Update item
     elif function_code == "U":
-        input_item = user_input("What is the index of the item you want to update? ")
-        input_update = user_input("What item would you like to replace it with? ")
+        input_item = user_input("What is the index of the item you want to update?\n ")
+        input_update = user_input("What item would you like to replace it with?\n ")
         update(input_item, input_update)
     # Print all items - Works
     elif function_code == "P":
         list_all_items()
     #Mark Complete
     elif function_code == "C":
-        input_item = user_input("What item would you like to mark complete?")
+        input_item = user_input("What item would you like to mark complete?\n")
         mark_completed(input_item)
     # Close out of program - Works
     elif function_code =="Q":
@@ -89,8 +89,7 @@ def select(function_code):
 
 running = True
 while running:
-    selection = user_input(
-        "Press A to Add to list, D to Delete, R to access an item, U to Update item, C to mark as Completed,and P to show list. Press Q to Exit ")
+    selection = user_input("Press A to Add to list, \nD to Delete, \nR to access an item, \nU to Update item, \nC to mark as Completed, \nand P to show list. \nPress Q to Exit \n")
     running = select(selection)
 
 #Testing code
